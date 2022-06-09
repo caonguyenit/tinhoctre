@@ -6,9 +6,9 @@
     {% endif %}
     {{ make_tab('about', 'fa-info-circle', url('user_page', user.user.username), _('About')) }}
     {{ make_tab('problems', 'fa-puzzle-piece', url('user_problems', user.user.username), _('Statistics')) }}
-    {% if not request.official_contest_mode %}
-        {{ make_tab('blogs', 'fa-rss', url('user_blog', user.user.username), _('Blogs')) }}
-    {% endif %}
+{#    {% if not request.official_contest_mode %}#}
+{#        {{ make_tab('blogs', 'fa-rss', url('user_blog', user.user.username), _('Blogs')) }}#}
+{#    {% endif %}#}
     {% if request.user.is_superuser and user.user != request.user and not user.user.is_superuser %}
         {{ make_tab('impersonate', 'fa-eye', url('impersonate-start', user.user.id), _('Impersonate')) }}
         {{ make_tab('ban', 'fa-ban', url('user_ban', user.user.username), _('Ban this user')) }}
